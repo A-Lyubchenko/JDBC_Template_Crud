@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPDATE DEVELOPER</title>
+</head>
+<body>
+UPDATE DEVELOPER
+<br/>
+<br/>
+<form th:method="PATCH" th:action="@{/developers/{id}(id=${developer.getId()})}" th:object="${developer}">
+    <label for="name">Enter new Name</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <br/>
+    <label for="age">Enter new Age</label>
+    <input type="text" th:field="*{age}" id="age">
+    <br/>
+    <br/>
+    <label for="sex">Enter new Sex</label>
+    <input type="text" th:field="*{sex}" id="sex">
+    <br/>
+    <br/>
+    <label for="phone_number">Enter new Phone_number</label>
+    <input type="text" th:field="*{phone_number}" id="phone_number">
+    <br/>
+    <br/>
+    <label for="salary">Enter new Salary</label>
+    <input type="text" th:field="*{salary}" id="salary">
+    <br/>
+    <br/>
+    <input type="submit" value="Update!"/>
+
+</form>
+</body>
+</html>

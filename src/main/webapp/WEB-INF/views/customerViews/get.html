@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CUSTOMER BY ID</title>
+</head>
+<body>
+CUSTOMER
+<br/>
+<br/>
+<p th:text="${customer.getId()}">Id</p>
+<p th:text="${customer.getName()}">Name</p>
+<p th:text="${customer.getLocation()}">Location</p>
+<br/>
+<br/>
+<hr/>
+<a th:href="@{/customers/{id}/update(id=${customer.getId()})}">^----- Update this customer -----^</a>
+<br/>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/companies/{id}(id=${customer.getId()})}" th:object="${customer}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PROJECTS BY ID</title>
+</head>
+<body>
+PROJECTS
+<br/>
+<br/>
+<p th:text="${project.getId()}">Id</p>
+<p th:text="${project.getName()}">Name</p>
+<p th:text="${project.getStart()}">Start</p>
+<p th:text="${project.getCoast()}">Coast</p>
+
+<br/>
+<br/>
+<hr/>
+<a th:href="@{/projects/{id}/update(id=${project.getId()})}">^----- Update this project -----^</a>
+<br/>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/projects/{id}(id=${project.getId()})}" th:object="${project}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>

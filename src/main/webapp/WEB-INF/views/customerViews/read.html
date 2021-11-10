@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL CUSTOMERS</title>
+</head>
+<body>
+ALL CUSTOMERS
+<br/>
+<br/>
+<div th:each="customer:${customers}">
+    <a th:href="@{/customers/{id}(id=${customer.getId()})}"
+       th:text="${customer.getId()} + ',  ' + ${customer.getName()} + ',  ' + ${customer.getLocation()}">Info</a>
+</div>
+<br/>
+<hr/>
+<a href="/customers/new">^----- Create customer -----^</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL DEVELOPERS</title>
+</head>
+<body>
+ALL DEVELOPERS
+<br/>
+<br/>
+<div th:each="developer:${developers}">
+    <a th:href="@{/developers/{id}(id=${developer.getId()})}"
+       th:text="${developer.getId()} + ',  ' + ${developer.getName()} + ',  ' + ${developer.getAge()} +
+       ',  ' + ${developer.getSex()} + ',  ' + ${developer.getPhone_number()} + ',  ' + ${developer.getSalary()}">Info</a>
+</div>
+<br/>
+<hr/>
+<a href="/developers/new">^----- Create developer -----^</a>
+</body>
+</html>

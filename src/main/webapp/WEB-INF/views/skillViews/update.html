@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPDATE SKILL</title>
+</head>
+<body>
+UPDATE SKILL
+<br/>
+<br/>
+<form th:method="PATCH" th:action="@{/skills/{id}(id=${skill.getId()})}" th:object="${skill}">
+    <label for="department">Enter new department</label>
+    <input type="text" th:field="*{department}" id="department">
+    <br/>
+    <br/>
+    <label for="level">Enter new level</label>
+    <input type="text" th:field="*{level}" id="level">
+    <br/>
+    <br/>
+    <input type="submit" value="Update!"/>
+
+</form>
+</body>
+</html>

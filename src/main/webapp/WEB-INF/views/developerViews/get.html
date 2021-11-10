@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEVELOPERS BY ID</title>
+</head>
+<body>
+DEVELOPER
+<br/>
+<br/>
+<p th:text="${developer.getId()}">Id</p>
+<p th:text="${developer.getName()}">Name</p>
+<p th:text="${developer.getAge()}">Age</p>
+<p th:text="${developer.getSex()}">Sex</p>
+<p th:text="${developer.getPhone_number()}">Phone_number</p>
+<p th:text="${developer.getSalary()}">Salary</p>
+<br/>
+<br/>
+<hr/>
+<a th:href="@{/develoeprs/{id}/update(id=${developer.getId()})}">^----- Update this developer -----^</a>
+<br/>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/developers/{id}(id=${developer.getId()})}" th:object="${developer}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>

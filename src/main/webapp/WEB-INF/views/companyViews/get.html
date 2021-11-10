@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>COMPANY BY ID</title>
+</head>
+<body>
+COMPANY
+<br/>
+<br/>
+<p th:text="${company.getId()}">Id</p>
+<p th:text="${company.getName()}">Name</p>
+<p th:text="${company.getLocation()}">Location</p>
+<br/>
+<br/>
+<hr/>
+<a th:href="@{/companies/{id}/update(id=${company.getId()})}">^----- Update this company -----^</a>
+<br/>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/companies/{id}(id=${company.getId()})}" th:object="${company}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>

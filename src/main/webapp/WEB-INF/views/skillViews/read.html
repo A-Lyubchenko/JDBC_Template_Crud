@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL SKILLS</title>
+</head>
+<body>
+ALL SKILLS
+<br/>
+<br/>
+<div th:each="skill:${skills}">
+    <a th:href="@{/skills/{id}(id=${skill.getId()})}"
+       th:text="${skill.getId()} + ',  ' + ${skill.getDepartment()} + ',  ' + ${skill.getLevel()}">Info</a>
+</div>
+<br/>
+<hr/>
+<a href="/skills/new">^----- Create skill -----^</a>
+</body>
+</html>

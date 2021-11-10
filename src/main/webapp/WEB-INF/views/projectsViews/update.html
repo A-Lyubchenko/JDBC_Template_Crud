@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPDATE PROJECTS</title>
+</head>
+<body>
+UPDATE PROJECTS
+<br/>
+<br/>
+<form th:method="PATCH" th:action="@{/projects/{id}(id=${project.getId()})}" th:object="${project}">
+    <label for="name">Enter new Name</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <br/>
+    <label for="start">Enter new when Project start</label>
+    <input type="text" th:field="*{start}" id="start">
+    <br/>
+    <br/>
+    <label for="coast">Enter new coast project</label>
+    <input type="text" th:field="*{coast}" id="coast">
+    <br/>
+    <br/>
+    <input type="submit" value="Update!"/>
+
+</form>
+</body>
+</html>

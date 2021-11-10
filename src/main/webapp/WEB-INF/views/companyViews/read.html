@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL COMPANIES</title>
+</head>
+<body>
+ALL COMPANIES
+<br/>
+<br/>
+<div th:each="company:${companies}">
+    <a th:href="@{/companies/{id}(id=${company.getId()})}"
+       th:text="${company.getId()} + ',  ' + ${company.getName()} + ',  ' + ${company.getLocation()}">Info</a>
+</div>
+<br/>
+<hr/>
+<a href="/companies/new">^----- Create company -----^</a>
+</body>
+</html>

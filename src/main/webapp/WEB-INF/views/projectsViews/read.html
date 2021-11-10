@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL PROJECTS</title>
+</head>
+<body>
+ALL PROJECTS
+<br/>
+<br/>
+<div th:each="project:${projects}">
+    <a th:href="@{/projects/{id}(id=${project.getId()})}"
+       th:text="${project.getId()} + ',  ' + ${project.getName()} + ',  ' + ${project.getStart()} +
+       ',  ' + ${project.getCoast()}">Info</a>
+</div>
+<br/>
+<hr/>
+<a href="/projects/new">^----- Create project -----^</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SKILL BY ID</title>
+</head>
+<body>
+SKILL
+<br/>
+<br/>
+<p th:text="${skill.getId()}">Id</p>
+<p th:text="${skill.getDepartment()}">Department</p>
+<p th:text="${skill.getLevel()}">Level</p>
+<br/>
+<br/>
+<hr/>
+<a th:href="@{/skills/{id}/update(id=${skill.getId()})}">^----- Update this skill -----^</a>
+<br/>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/skills/{id}(id=${skill.getId()})}" th:object="${skill}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>

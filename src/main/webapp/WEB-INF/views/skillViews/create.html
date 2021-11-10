@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATE NEW SKILLS</title>
+</head>
+<body>
+CREATE NEW SKILLS
+<br/>
+<br/>
+<form th:method="POST" th:action="@{/skills}" th:object="${skill}">
+    <label for="id">Enter Id</label>
+    <input type="text" th:field="*{id}" id="id">
+    <br/>
+    <br/>
+    <label for="department">Enter department</label>
+    <input type="text" th:field="*{department}" id="department">
+    <br/>
+    <br/>
+    <label for="level">Enter level</label>
+    <input type="text" th:field="*{level}" id="level">
+    <br/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>

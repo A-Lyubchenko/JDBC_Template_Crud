@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATE NEW CUSTOMER</title>
+</head>
+<body>
+CREATE NEW CUSTOMER
+<br/>
+<br/>
+<form th:method="POST" th:action="@{/customers}" th:object="${customer}">
+    <label for="id">Enter Id</label>
+    <input type="text" th:field="*{id}" id="id">
+    <br/>
+    <br/>
+    <label for="name">Enter Name</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <br/>
+    <label for="location">Enter location</label>
+    <input type="text" th:field="*{location}" id="location">
+    <br/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>
